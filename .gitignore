@@ -4,3 +4,9 @@
 *.jar
 *.war
 *.ear
+
+# IDE Files #
+.idea
+
+# Database Files #
+*.sqlite
