@@ -46,6 +46,12 @@ public class Database {
         return conn;
     }
 
+    /**
+     * Inserts a new Course into the database, with the provided parameters.
+     * @param courseNr
+     * @param name
+     * @param semester
+     */
     protected void insert(String courseNr, String name, String semester) {
         String insert = "INSERT INTO courses"
                 + "(courseNr, name, semester)"
@@ -56,6 +62,27 @@ public class Database {
             pstmt.setString(1, courseNr);
             pstmt.setString(2, name);
             pstmt.setString(3, semester);
+            pstmt.execute();
+        } catch (SQLException e) {
+            System.err.println("Cannot execute update...");
+            System.err.println(e);
+        }
+    }
+
+    /**
+     * Inserts a Course object into the database.
+     * @param course
+     */
+    protected void insert(Course course) {
+        String insert = "INSERT INTO courses"
+                + "(courseNr, name, semester)"
+                + "VALUES (?, ?, ?);";
+        Connection conn = getConnection();
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(insert);
+            pstmt.setString(1, course.getCourseNr());
+            pstmt.setString(2, course.getName());
+            pstmt.setString(3, course.getSemester());
             pstmt.execute();
         } catch (SQLException e) {
             System.err.println("Cannot execute update...");

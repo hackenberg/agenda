@@ -14,8 +14,4 @@ public class Main {
 
     }
 
-    private static void addCourseToDb(Course course, Database db) {
-        db.insert(course.getCourseNr(), course.getName(), course.getSemester());
-    }
-
 }
