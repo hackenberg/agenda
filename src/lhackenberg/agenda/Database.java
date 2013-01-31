@@ -2,6 +2,11 @@ package lhackenberg.agenda;
 
 import java.sql.*;
 
+/*
+TODO: The course number is not sufficient as primary key.
+      A course may exist for multiple semesters.
+*/
+
 public class Database {
 
     private static final String dbPath = "agenda.sqlite";
@@ -90,6 +95,10 @@ public class Database {
         }
     }
 
+    /**
+     * Deletes a course from the database.
+     * @param courseNr
+     */
     protected void delete(String courseNr) {
         String delete = "DELETE FROM courses WHERE courses.courseNr == ?";
         try {
@@ -102,6 +111,10 @@ public class Database {
         }
     }
 
+    /**
+     * Prints all courses in the database.
+     * @return String representing all courses
+     */
     @Override
     public String toString() {
         String courses = "";
