@@ -84,7 +84,7 @@ public class Database {
             ResultSet results = stmt.executeQuery("SELECT * FROM courses");
             while (results.next()) {
                 courses += results.getString("courseNr") + " ";
-                courses += results.getString("name");
+                courses += results.getString("name") + " ";
                 courses += results.getString("semester") + "\n";
             }
         } catch (SQLException e) {
