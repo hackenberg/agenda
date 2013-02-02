@@ -1,25 +1,30 @@
 package lhackenberg.agenda;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Database courses = new Database();
-
-        // test case
-        courses.insert("99", "testName", "testSemester");
-        System.out.println(courses);
-        courses.delete("99");
+        DbHelper dbHelper = DbHelper.getInstance();
+        String[] tables = { "courses", "assignments", "lectures", "tests"};
 
         // dispatch
-        if (args[0].equals("add") && args.length > 3) {
-            courses.insert(args[1], args[2], args[3]);
+        if (args.length == 0) {
+            System.err.println("TODO: usage");
+            System.exit(1);
 
         } else if (args[0].equals("print")) {
-            System.out.println(courses);
+            System.out.println(dbHelper.dumpCourses());
+            ArrayList<Assignment> assignments = dbHelper.dumpAssignments();
+            for (Assignment assignment : assignments) {
+                System.out.println(assignment);
+            }
+            //System.out.println(dbHelper.dump("lectures"));
+            //System.out.println(dbHelper.dump("tests"));
 
         } else {
-            System.out.println("TODO: usage");
+            System.err.println("TODO: usage");
             System.exit(1);
         }
 
