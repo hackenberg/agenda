@@ -2,20 +2,21 @@ package lhackenberg.agenda;
 
 public class Course {
 
-    private int _id;
+    private int _id, grade;
     private String courseNr, name, semester;
 
-    protected Course(int _id, String courseNr, String name, String semester) {
+    protected Course(int _id, String courseNr, String name, String semester, int grade) {
         set_id(_id);
         setCourseNr(courseNr);
         setName(name);
         setSemester(semester);
+        setGrade(grade);
     }
 
     @Override
     public String toString() {
         return get_id() + " " + getCourseNr() + " " + getName() + " "
-                + getSemester();
+                + getSemester() + " " + getGrade();
     }
 
     protected int get_id() { return _id; }
@@ -29,5 +30,8 @@ public class Course {
 
     protected String getSemester() { return this.semester; }
     protected void setSemester(String semester) { this.semester = semester; }
+
+    protected int getGrade() { return grade; }
+    protected void setGrade(int grade) { this.grade = grade; }
 
 } // of class Course
