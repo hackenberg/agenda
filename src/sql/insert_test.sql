@@ -11,22 +11,22 @@ BEGIN;
     INSERT INTO courses (courseNr, name, semester)
             VALUES ("5", "course5", "semester5");
 
-    INSERT INTO assignments (course, date_unix) VALUES ("1", 0);
-    INSERT INTO assignments (course, date_unix) VALUES ("1", 0);
-    INSERT INTO assignments (course, date_unix) VALUES ("3", 0);
-    INSERT INTO assignments (course, date_unix) VALUES ("4", 0);
-    INSERT INTO assignments (course, date_unix) VALUES ("5", 0);
+    INSERT INTO assignments (course_id, date_unix) VALUES ("1", 0);
+    INSERT INTO assignments (course_id, date_unix) VALUES ("1", 0);
+    INSERT INTO assignments (course_id, date_unix) VALUES ("3", 0);
+    INSERT INTO assignments (course_id, date_unix) VALUES ("4", 0);
+    INSERT INTO assignments (course_id, date_unix) VALUES ("5", 0);
 
-    INSERT INTO lectures (course, date_unix) VALUES ("1", 0);
-    INSERT INTO lectures (course, date_unix) VALUES ("2", 0);
-    INSERT INTO lectures (course, date_unix) VALUES ("3", 0);
-    INSERT INTO lectures (course, date_unix) VALUES ("4", 0);
-    INSERT INTO lectures (course, date_unix) VALUES ("5", 0);
+    INSERT INTO lectures (course_id, date_unix) VALUES ("1", 0);
+    INSERT INTO lectures (course_id, date_unix) VALUES ("2", 0);
+    INSERT INTO lectures (course_id, date_unix) VALUES ("3", 0);
+    INSERT INTO lectures (course_id, date_unix) VALUES ("4", 0);
+    INSERT INTO lectures (course_id, date_unix) VALUES ("5", 0);
 
-    INSERT INTO tests (course, date_unix) VALUES ("1", 0);
-    INSERT INTO tests (course, date_unix) VALUES ("1", 0);
-    INSERT INTO tests (course, date_unix) VALUES ("3", 0);
-    INSERT INTO tests (course, date_unix) VALUES ("4", 0);
-    INSERT INTO tests (course, date_unix) VALUES ("5", 0);
+    INSERT INTO tests (course_id, date_unix) VALUES ("1", 0);
+    INSERT INTO tests (course_id, date_unix) VALUES ("1", 0);
+    INSERT INTO tests (course_id, date_unix) VALUES ("3", 0);
+    INSERT INTO tests (course_id, date_unix) VALUES ("4", 0);
+    INSERT INTO tests (course_id, date_unix) VALUES ("5", 0);
 
 END;

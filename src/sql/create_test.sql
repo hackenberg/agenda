@@ -10,7 +10,7 @@ BEGIN;
     ;
     CREATE TABLE assignments
         ( _id       INTEGER PRIMARY KEY AUTOINCREMENT
-        , course    INTEGER NOT NULL
+        , course_id INTEGER NOT NULL
         , date_unix INTEGER
         , pts       INTEGER DEFAULT NULL
         , pts_max   INTEGER DEFAULT NULL
@@ -19,14 +19,14 @@ BEGIN;
     ;
     CREATE TABLE lectures
         ( _id       INTEGER PRIMARY KEY AUTOINCREMENT
-        , course    INTEGER NOT NULL
+        , course_id INTEGER NOT NULL
         , date_unix INTEGER
         , FOREIGN KEY (course) REFERENCES courses(_id)
         )
     ;
     CREATE TABLE tests
         ( _id       INTEGER PRIMARY KEY AUTOINCREMENT
-        , course    INTEGER NOT NULL
+        , course_id INTEGER NOT NULL
         , date_unix INTEGER
         , pts       INTEGER DEFAULT NULL
         , pts_max   INTEGER DEFAULT NULL
